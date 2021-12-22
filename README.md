@@ -2,9 +2,9 @@
 A script which can document the name of each workflow, the function of each workflow, the names of the arguments used, their data type and corresponding annotations. Variables names, type and annotations can also be captured, but for this tutorial, I will not be including them. 
 
 You can read a detailed walkthrough of this code in the UiPath Community Forum : 
-
+--------------------------------
 ### [Resulting output](https://jeev20.github.io/UiPathProjectDocumentation/index.html)
-
+--------------------------------------
 ### Scope for improvement
 1. To considers the sequential order of the invoked workflows from Main.xaml
 2. To read and document annotations in each of the sequences within a workflow 
