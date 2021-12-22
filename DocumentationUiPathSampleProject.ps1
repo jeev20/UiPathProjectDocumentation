@@ -25,7 +25,7 @@ $CurrentDirectory = Get-Location |  select -expand Path
 $ProjectPath = -join("C:\Users\", $env:UserName, "\Downloads\TutorialRobustWorkflow\TutorialRobustWorkflow")
 
 # Ensure the last folder level i.e., UiPath project name library name is used as the Output filename. 
-$OutputFile = $CurrentDirectory+"\"+$ProjectPath.Split("\")[-1].ToString()+".html" 
+$OutputFile = $CurrentDirectory+"\"+"ProjectDocumentation_"+$ProjectPath.Split("\")[-1].ToString()+".html" 
 # If output file exists, clear its content
 $ExistsOutputFile = Test-Path -Path $OutputFile
 if($ExistsOutputFile -eq $true){
