@@ -160,6 +160,7 @@ ForEach ($File in $FilesFound ) {
         }
     }
 
+    # $AssemblyReferences are not used, but leaving it for situations where it is needed 
     $AssemblyReferences = $XAMLData.Activity.'TextExpression.ReferencesForImplementation'.Collection.AssemblyReference
     if($AssemblyReferences -eq $null){
         $Namespaces = $XAMLData.Activity.'TextExpression.ReferencesForImplementation'.List.AssemblyReference
