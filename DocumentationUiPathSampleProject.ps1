@@ -28,7 +28,7 @@ DownloadSampleFromUiPathForum  'https://forum.uipath.com/uploads/short-url/4j6bR
 # Find the current location
 $CurrentDirectory = Get-Location |  select -expand Path
 # Provide UiPath project path - Not dynamic for tutorial purposes
-$ProjectPath = -join ("C:\Users\", $env:UserName, "\Downloads\TutorialRobustWorkflow\TutorialRobustWorkflow")
+$ProjectPath = -join ("C:\Users\", $env:UserName, "\Downloads\TutorialRobustWorkflow")
 
 # Ensure the last folder level i.e., UiPath project name library name is used as the Output filename. 
 $OutputFile = $CurrentDirectory + "\" + "ProjectDocumentation_" + $ProjectPath.Split("\")[-1].ToString() + ".html" 
@@ -82,8 +82,8 @@ ForEach ($File in $FilesFound ) {
                 if ($node.Default -eq $null) {
                 }else { $queue.Enqueue($node) }
                 $VariableNames += $node.Name
-                $VariableType += $node.'Annotation.AnnotationText'
-                $VariableAnnotationText += $node.TypeArguments.Replace("x:", "")
+                $VariableType += $node.TypeArguments
+                $VariableAnnotationText +=  $node.'Annotation.AnnotationText'
                 $variableScope += $scopeName
             }
         }else {
@@ -145,6 +145,34 @@ ForEach ($File in $FilesFound ) {
         }
     }# If ends
 
+    
+    $Namespaces = $XAMLData.Activity.'TextExpression.NamespacesForImplementation'.Collection.String
+    if($NameSpaces -eq $null){
+        $Namespaces = $XAMLData.Activity.'TextExpression.NamespacesForImplementation'.List.String
+    }
+    $Namespace_Names = ''
+    if ($Namespaces.Length -ne 0) {
+        ForEach ($i in 0..($Namespaces.Count - 1)) {
+            $NamespaceNamesTemp = $Namespaces[$i] 
+            $Namespace_Names += "<li>" + $NamespaceNamesTemp + "`n" + "</li>"
+        }
+    }
+
+    $AssemblyReferences = $XAMLData.Activity.'TextExpression.ReferencesForImplementation'.Collection.AssemblyReference
+    if($AssemblyReferences -eq $null){
+        $Namespaces = $XAMLData.Activity.'TextExpression.ReferencesForImplementation'.List.AssemblyReference
+    }
+    $AssemblyReferences_Names = ''
+    if ($AssemblyReferences.Length -ne 0) {
+        ForEach ($i in 0..($AssemblyReferences.Count - 1)) {
+            $AssemblyReferencesNamesTemp = $AssemblyReferences[$i] 
+            $AssemblyReferences_Names += "<li>" + $AssemblyReferencesNamesTemp + "`n" + "</li>"
+        }
+    }
+
+
+
+
     # Defining a custom PSObject 
     $obj = New-Object psobject -Property @{`
             "File"            = $File;
@@ -156,9 +184,12 @@ ForEach ($File in $FilesFound ) {
         "VariableType"        = $Variable_Type;
         "VariableAnnotation"  = $VariableAnnotation_Text;
         "VariableScope"       = $Variable_Scope;
+        "Imports"           = $Namespace_Names;
+        
+
     }
     # These headers will be returned
-    $ReturnObj += $obj | select File, WorkflowAnnotation, VariableNames, VariableType, VariableAnnotation, VariableScope, ArgumentNames, ArgumentType, ArgumentsAnnotation
+    $ReturnObj += $obj | select File, WorkflowAnnotation, VariableNames, VariableType, VariableAnnotation, VariableScope, ArgumentNames, ArgumentType, ArgumentsAnnotation,Imports
 }# For loop ends
 
 
