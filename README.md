@@ -5,7 +5,7 @@ You can read a detailed walkthrough of this code in the UiPath Community Forum :
 
 --------------------------------
 
-### [Resulting output](https://jeev20.github.io/UiPathProjectDocumentation/index.html)
+### [Resulting output](https://jeev20.github.io/UiPathProjectDocumentation/)
 
 --------------------------------------
 ### Scope for improvement
