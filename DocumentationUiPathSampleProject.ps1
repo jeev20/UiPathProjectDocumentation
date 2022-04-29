@@ -129,10 +129,12 @@ ForEach ($File in $FilesFound ) {
     $ArgumentsAnnotation_Text = ''
     if ($ArgumentsNames.Length -ne 0) {
         ForEach ($i in 0..($ArgumentsNames.Count - 1)) {
+            try{
             $ArgumentsNamesTemp = $ArgumentsNames[$i] 
             $ArgumentsTypeTemp = $ArgumentsType[$i]
             $ArgumentsAnnotationTextTemp = $ArgumentsAnnotationText[$i]
-
+            }catch{}
+            
             $Arguments_Names += "<li>" + $ArgumentsNamesTemp + "`n" + "</li>"
             $Arguments_Type += "<li>" + "$ArgumentsTypeTemp `n" + "</li>"
             if ($ArgumentsAnnotationTextTemp.Length -eq 0) {
