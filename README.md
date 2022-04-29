@@ -14,8 +14,11 @@ You can read a detailed walkthrough of this code in the UiPath Community Forum :
 - [ ] To apply 1 and 2 into REFramework, to create a document, which provides both the order and the annotations for the invoked workflows in Process.xaml
 - [x] Support variables and programatically get scope of each variable
 
-### **If you would like to contribute, please do and send me a pull request.** :thumbsup:
+
 
 ### Special mention
 I would like to thank Siyang Wu for his brilliant approach to read the variable scope from UiPath Workflows. This repo has replicated his approach to retrieve variable information in PowerShell. 
-His componenet is available at https://marketplace.uipath.com/listings/get-all-variable-definitions?utm_source=internal&utm_medium=related&utm_campaign=velocistar-globalvariables-activites 
+His componenet is [available at](https://marketplace.uipath.com/listings/get-all-variable-definitions?utm_source=internal&utm_medium=related&utm_campaign=velocistar-globalvariables-activites)
+
+
+### **If you would like to contribute, please do and send me a pull request.** :thumbsup:

@@ -22,7 +22,7 @@ function DownloadSampleFromUiPathForum {
 }# function ends
 
 # Calling the download function on the sample file
-#DownloadSampleFromUiPathForum  'https://forum.uipath.com/uploads/short-url/4j6bRIkvsRdRnsr7BhfcSHIwieF.zip'
+DownloadSampleFromUiPathForum  'https://forum.uipath.com/uploads/short-url/4j6bRIkvsRdRnsr7BhfcSHIwieF.zip'
 
 
 # Find the current location
