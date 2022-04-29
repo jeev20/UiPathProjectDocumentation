@@ -22,13 +22,17 @@ function DownloadSampleFromUiPathForum {
 }# function ends
 
 # Calling the download function on the sample file
-DownloadSampleFromUiPathForum  'https://forum.uipath.com/uploads/short-url/4j6bRIkvsRdRnsr7BhfcSHIwieF.zip'
+#DownloadSampleFromUiPathForum  'https://forum.uipath.com/uploads/short-url/4j6bRIkvsRdRnsr7BhfcSHIwieF.zip'
 
 
 # Find the current location
 $CurrentDirectory = Get-Location |  select -expand Path
 # Provide UiPath project path - Not dynamic for tutorial purposes
+<<<<<<< HEAD
 $ProjectPath = -join ("C:\Users\", $env:UserName, "\Downloads\TutorialRobustWorkflow")
+=======
+$ProjectPath = -join ("C:\Users\", $env:UserName, "\Documents\UiPath\\ForumAnswers")
+>>>>>>> 977c94c830e25b364c35b8bbffff5fcd13b587f8
 
 # Ensure the last folder level i.e., UiPath project name library name is used as the Output filename. 
 $OutputFile = $CurrentDirectory + "\" + "ProjectDocumentation_" + $ProjectPath.Split("\")[-1].ToString() + ".html" 
