@@ -29,7 +29,7 @@ function DownloadSampleFromUiPathForum {
 $CurrentDirectory = Get-Location |  select -expand Path
 # Provide UiPath project path - Not dynamic for tutorial purposes
 
-$ProjectPath = -join ("C:\Users\", $env:UserName, "\Downloads\TutorialRobustWorkflow")
+$ProjectPath = -join ("C:\Users\", $env:UserName, "\Downloads\TutorialRobustWorkflow\TutorialRobustWorkflow")
 
 
 # Ensure the last folder level i.e., UiPath project name library name is used as the Output filename. 
