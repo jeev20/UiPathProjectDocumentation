@@ -9,9 +9,9 @@ You can read a detailed walkthrough of this code in the UiPath Community Forum :
 
 --------------------------------------
 ### Scope for improvement
-1. To consider the sequential order of the invoked workflows from Main.xaml
-2. To read and document annotations in each of the sequences within a workflow 
-3. To apply 1 and 2 into REFramework, to create a document, which provides both the order and the annotations for the invoked workflows in Process.xaml
-4. Support variables and programatically get scope of each variable
+- [ ] To consider the sequential order of the invoked workflows from Main.xaml
+- [ ] To read and document annotations in each of the sequences within a workflow 
+- [ ] To apply 1 and 2 into REFramework, to create a document, which provides both the order and the annotations for the invoked workflows in Process.xaml
+- [x] Support variables and programatically get scope of each variable
 
 ### **If you would like to contribute, please do and send me a pull request.** :thumbsup:
