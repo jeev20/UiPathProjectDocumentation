@@ -48,8 +48,8 @@ You can read a detailed walkthrough of this code in the [UiPath Community Forum 
 
 
 
-### Special mention
-I would like to thank Siyang Wu for his brilliant approach to read the variable scope from UiPath Workflows. This repo has replicated his approach to retrieve variable information in PowerShell. His componenet is [available at](https://marketplace.uipath.com/listings/get-all-variable-definitions?utm_source=internal&utm_medium=related&utm_campaign=velocistar-globalvariables-activites)
-
+### Special mentions
+* I would like to thank Siyang Wu for his brilliant approach to read the variable scope from UiPath Workflows. This repo has replicated his approach to retrieve variable information in PowerShell. His componenet is [available at](https://marketplace.uipath.com/listings/get-all-variable-definitions?utm_source=internal&utm_medium=related&utm_campaign=velocistar-globalvariables-activites)
+* Thanks to my employer HEMIT for their support and encouragement.  
 
 ### **If you would like to contribute, please do and send me a pull request.** :thumbsup:
